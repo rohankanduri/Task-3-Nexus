@@ -1,0 +1,53 @@
+<% layout('thrisha/boilerplate')%>
+
+<div class="container">
+    <h1>All Documents</h1>
+    <div>
+      <a href="/certificates/new" class="btn btn-primary">Add Document</a>
+    </div>
+  
+    <% for (let certificate of certificates){%>
+    <div class="card mb-2 bg-glass">
+      <div class="row align-items-center">
+        <div class="col-md-4 col-lg-2">
+          <div class="glass-image-container">
+            <img class="img-fluid" alt="" src="<%=certificate.images[0].url%>">
+          </div>
+        </div>
+        <div class="col-md-8 col-lg-9">
+          <div class="card-body">
+            <h5 class="card-title"><%= certificate.title %> </h5>
+            <a class="btn btn-primary" href="/certificates/<%=certificate._id%>">View <%=certificate.title%></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% }%>
+  </div>
+  
+  <!-- Include Bootstrap CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+  
+  <style>
+    .bg-glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 10px;
+    }
+  
+    .glass-image-container {
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  
+    .glass-image-container img {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+  </style>
+  

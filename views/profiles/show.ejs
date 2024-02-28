@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <!-- <link rel="stylesheet" href="/stylesheets/index.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <style>
+      body {
+          background: #000;
+      }
+  
+      .container {
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 20px;
+          background: rgba(255, 255, 255, 0.15);
+          border-radius: 10px;
+          backdrop-filter: blur(10px);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          color: #fff;
+      }
+  
+      table {
+          width: 100%;
+          border-collapse: collapse;
+      }
+  
+      th,
+      td {
+          padding: 10px;
+          text-align: left;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+  
+      th {
+          font-weight: bold;
+      }
+  
+      img {
+          width: 100px;
+          border-radius: 50%;
+      }
+  
+      h4,
+      p {
+          margin: 0;
+          font-size: 18px; /* Increase the font size to your desired value */
+      }
+  
+      h4 {
+          margin-top: 10px;
+      }
+  
+      button,
+      a {
+          margin-top: 10px;
+          color: #fff;
+          background: #007bff;
+          border: none;
+          padding: 8px 12px;
+          border-radius: 4px;
+          text-decoration: none;
+          cursor: pointer;
+          transition: background 0.3s ease;
+          font-size: 16px; /* Increase the font size to your desired value */
+      }
+  
+      button:hover,
+      a:hover {
+          background: #0056b3;
+      }
+  
+      .btn-danger {
+          background: #dc3545;
+      }
+  
+      .btn-danger:hover {
+          background: #a71d2a;
+      }
+  </style>
+  
+  <title>Profile</title>
+</head>
+
+<body>
+
+
+
+  <div class="container">
+    <table>
+        <tr>
+            <!-- <td>
+                <img src="https://i.imgur.com/cMy8V5j.png" alt="user">
+            </td> -->
+            <td colspan="2" style="text-align: center;">
+                <img src="<%= profile.img %>" alt="image">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <h4>Name: <%= profile.fname %> <%= profile.lname %></h4>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p>Mobile Number: <%= profile.phone %></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <h4></h4>
+                <p>Address: <%= profile.address %><br>Pincode: <%= profile.pincode %></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <h3>Date of birth: <%= profile.dob %></h3>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="button" onclick="window.location.href='/profiles/<%=profile._id%>/edit';">Edit</button>
+                <a href="/">Home</a>
+                <form action="/profiles/<%=profile._id%>?_method=DELETE" method="POST">
+                    <button class="btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+
+</html>

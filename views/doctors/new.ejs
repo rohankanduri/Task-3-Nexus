@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .thrisha{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        form {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            width: 400px;
+        }
+    
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+    
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: black;
+            margin-bottom: 20px;
+        }
+    
+        .btn {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1 style="text-align: center;">Appointment</h1>
+    <% let userId = user._id %>
+
+
+    <div class="thrisha">
+
+    
+
+
+    <form action="/doctors" method="POST">
+        <input type="hidden" name="userId" value="<%= userId %>">
+
+        <label for="category">Select Category</label>
+        <select name="category" id="category">
+            <% for(let category of categories){ %>
+            <option value="<%=category%>"><%=category%></option>
+            <% } %>
+        </select>
+
+
+
+   
+   
+        <label for="fname" >First Name</label>
+        <input type="text"  name="fname" id="fname" placeholder="First name">
+    
+   
+        <label for="lname" >Last Name</label>
+        <input type="text"  name="lname" id="lname" placeholder="Last name">
+    
+
+        <label for="gender">Select Gender</label>
+        <select name="gender" id="gender">
+            <% for(let gender of genders){ %>
+            <option value="<%=gender%>"><%=gender%></option>
+            <% } %>
+        </select>
+
+       
+            <label for="dob" >Date of Birth</label>
+            <input type="date"  name="dob" id="dob">
+        
+
+       
+            <label for="age" >Age</label>
+            <input type="number"  name="age" id="age">
+        
+
+       
+            <label for="email" >Email</label>
+            <input type="email"  name="email" id="email">
+        
+
+       
+            <label for="address" >Address</label>
+            <input type="text"  name="address" id="address" placeholder="Address">
+        
+
+       
+            <label for="city" >City</label>
+            <input type="text"  name="city" id="city" placeholder="city">
+        
+       
+            <label for="state" >State</label>
+            <input type="text"  name="state" id="state" placeholder="State">
+        
+
+       
+            <label for="pincode" >Pincode</label>
+            <input type="number"  name="pincode" id="pincode" placeholder="Pincode">
+        
+            <label for="phone" >Phone Number</label>
+            <input type="number"  name="phone" id="phone" placeholder="Phone Number">
+       
+            <label for="description" >Describe your problem!</label>
+            <input type="text"  name="description" id="description" placeholder="description">
+    
+    
+   
+    
+        <button  class="btn btn-success">Submit</button>
+    </form>
+</div>
+
+
+
+    <script src="/javascripts/main.js"></script>
+</body>
+
+</html>

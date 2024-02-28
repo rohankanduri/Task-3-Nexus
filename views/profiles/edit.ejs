@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+</head>
+
+<body>
+    
+
+    <form action="/profiles/<%=profile._id%>?_method=PUT" method="POST">
+      <h1 style="text-align: center;">Update Note</h1>
+
+
+       
+    
+
+    
+    <div class="form-group">
+      <label for="fname" >First Name</label>
+      <input type="text" class="form-control" name="fname" id="fname" placeholder="First name" value = "<%= profile.fname %>">
+  </div>
+  <div class="form-group">
+      <label for="lname" >Last Name</label>
+      <input type="text" class="form-control" name="lname" id="lname" placeholder="Last name" value = "<%= profile.lname %>">
+  </div>
+  <div class="form-group">
+      <label for="phone" >Phone Number</label>
+      <input type="number" class="form-control" name="phone" id="phone" placeholder="Phone Number" value = "<%= profile.phone %>">
+  </div>
+  
+  <div class="form-group">
+      <label for="pincode" >Pincode</label>
+      <input type="number" class="form-control" name="pincode" id="pincode" placeholder="Pincode" value = "<%= profile.pincode %>">
+  </div>
+  <div class="form-group">
+      <label for="address" >Address</label>
+      <input type="text" class="form-control" name="address" id="address" placeholder="Address" value = "<%= profile.address %>">
+  </div>
+  <div class="form-group">
+      <label for="image" >Image</label>
+      <input type="text" class="form-control" name="image" id="image" placeholder="Image address" value = "<%= profile.image %>">
+  </div>
+  
+        <button  class="btn btn-success">Submit</button>
+
+
+
+
+        <div class="social">
+          <div class="go"><i class="fa fa-window-close"></i><a href="/profiles/<%=profile._id%>" style="color: rgb(159, 40, 40);">Cancel</a></div>
+          
+        </div>
+
+
+
+    </form>
+    
+
+    
+
+    
+
+    <script src="/javascripts/main.js"></script>
+
+</body>
+
+</html>

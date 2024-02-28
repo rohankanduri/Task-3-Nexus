@@ -1,0 +1,22 @@
+<% layout('layouts/boilerplate')%>
+    <h1>Profile</h1>
+    
+    <a href="/profiles/new">Add New Report</a>
+    <div class="row">
+        
+        <% for(let profile of profiles) { %>
+
+          <div class="card col-lg-3 col-md-4 col-sm-6 " >
+            
+            <div class="card-body overflow-hidden" style="height: 200px;" onclick="window.location.href = '/profiles/<%=profile._id%>';">
+              <!-- <div class="card-body" style="height: 150px; overflow-y: auto;"> -->
+                <h5 class="card-title"><%= profile.fname %></h5>
+                
+            </div>
+        
+        
+        
+          </div>
+        <% } %>
+      </div>
+

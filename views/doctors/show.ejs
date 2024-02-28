@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment</title>
+    <style>
+        body {
+    /* background-color: #121212; */
+    background-image: url('https://images.unsplash.com/photo-1478476868527-002ae3f3e159?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJsYWNrJTIwZG9jdG9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+        
+        .card {
+            background-color: rgb(0, 0, 0, 0.65);
+            border-radius: 10px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+        }
+        
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        th {
+            text-align: left;
+        }
+        
+        td {
+            padding: 8px 0;
+        }
+        
+        button, a.btn {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+        
+        button:hover, a.btn:hover {
+            background-color: #45a049;
+        }
+        
+        .d-flex {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mb-3">
+        <div class="card">
+            <table>
+                <tr>
+                    <th>Category:</th>
+                    <td><%= doctor.category %></td>
+                </tr>
+                <tr>
+                    <th>Doctor:</th>
+                    <td><%= doctor.fname %> <%= doctor.lname %></td>
+                </tr>
+                <tr>
+                    <th>Description:</th>
+                    <td><%= doctor.description %></td>
+                </tr>
+                <tr>
+                    <th>Gender:</th>
+                    <td><%= doctor.gender %></td>
+                </tr>
+                <tr>
+                    <th>Date of Birth:</th>
+                    <td><%= doctor.dob %></td>
+                </tr>
+                <tr>
+                    <th>Age:</th>
+                    <td><%= doctor.age %></td>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <td><%= doctor.email %></td>
+                </tr>
+                <tr>
+                    <th>City:</th>
+                    <td><%= doctor.city %></td>
+                </tr>
+                <tr>
+                    <th>State:</th>
+                    <td><%= doctor.state %></td>
+                </tr>
+                <tr>
+                    <th>Address:</th>
+                    <td><%= doctor.address %></td>
+                </tr>
+                <tr>
+                    <th>Pincode:</th>
+                    <td><%= doctor.pincode %></td>
+                </tr>
+                <tr>
+                    <th>Phone:</th>
+                    <td><%= doctor.phone %></td>
+                </tr>
+            </table>
+            
+            <div class="d-flex">
+                <button type="button" onclick="window.location.href='/doctors/<%=doctor._id%>/edit';">Edit</button>
+                <a href="/doctors" class="btn btn-secondary">Home</a>
+                <form action="/doctors/<%=doctor._id%>?_method=DELETE" method="POST">
+                    <button>Delete</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
